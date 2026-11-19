@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
     category : "food"
 },
 {
-    amount:"1,500",
+    amount:"1,500", 
     shopping:"cloths shopping",
     date:"16 Nov 2026",
     category:"shopping"
