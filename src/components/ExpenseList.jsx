@@ -9,7 +9,7 @@ function ExpenseList() {
   const [openModel, setOpenModel] = useState(false);
   const [editId, setEditId] = useState(null);
 
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const loadExpenses = () => {
     const savedExpenses = JSON.parse(localStorage.getItem("expense") || "[]");
@@ -39,8 +39,7 @@ function ExpenseList() {
   };
 
   // Read more handler
-  const handleReadMore= (id) =>
-    navigate(`/expenseDetails/${id}`);
+  const handleReadMore = (id) => navigate(`/expenseDetails/${id}`);
 
   return (
     <>
@@ -93,7 +92,12 @@ function ExpenseList() {
                     >
                       Edit
                     </button>
-                    <button className="btn-readmore" onClick={()=> handleReadMore(expense.id)}>view</button>
+                    <button
+                      className="btn-readmore"
+                      onClick={() => handleReadMore(expense.id)}
+                    >
+                      view
+                    </button>
                   </td>
                 </tr>
               ))
