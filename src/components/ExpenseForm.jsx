@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "../styles/ExpenseForm.css";
-import { v4 as uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 export default function ExpenseForm() {
-    const navigate =useNavigate();
+  const navigate = useNavigate();
   const [formdata, setfordata] = useState({
     amount: "",
     description: "",
@@ -43,11 +43,11 @@ export default function ExpenseForm() {
   const handlesubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-    const expense=JSON.parse(localStorage.getItem('expense')||'[]') ;
+    const expense = JSON.parse(localStorage.getItem("expense") || "[]");
 
-    const nevexpense={...formdata,id:uuidv4()};
-    console.log("expense addes successfully",nevexpense);
-    localStorage.setItem('expense',JSON.stringify([...expense,nevexpense]));
+    const nevexpense = { ...formdata, id: uuidv4() };
+    console.log("expense addes successfully", nevexpense);
+    localStorage.setItem("expense", JSON.stringify([...expense, nevexpense]));
     navigate("/");
   };
   return (
