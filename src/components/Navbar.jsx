@@ -1,8 +1,10 @@
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import "../styles/Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("user");
@@ -27,22 +29,22 @@ export default function Navbar() {
           <ul>
             <li>
               <NavLink to="/add-expense" className="links">
-                add Expense
+                Add Expense
               </NavLink>
             </li>
           </ul>
 
           <ul>
             <li>
-              <NavLinks NavLink to="/expense-items"  className="links">
+              <NavLink to="/expense-items" className="links">
                 Expense Items
-              </NavLinks>
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="nav-actions">
-          <button type="button" className="theme-toggle">
-            <FaMoon />
+          <button type="button" className="theme-toggle" onClick={toggleTheme}>
+            {theme === "light" ? <FaMoon/> :<FaSun/>}
           </button>
 
           <a href="" className="links logout-btn" onClick={logout}>

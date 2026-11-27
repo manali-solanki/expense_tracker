@@ -1,0 +1,12 @@
+.home-page{
+    background-color: #f4f6f8;
+    color: #2b2a2a;
+    padding-top: 1px;
+    height: 100vh;
+}
+
+.home-page.dark{
+    background-color: #1f2937;
+    color: #ffff;
+    height: 100vh;
+}
